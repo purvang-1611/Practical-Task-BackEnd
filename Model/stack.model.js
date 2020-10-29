@@ -5,7 +5,7 @@ var stack={
         return db.query("select questions,answer from stack",callback);
     },
     getQuestionByKeyWord(word,callback){
-        var query="select questions,answer from stack where questions LIKE '%"+word+"%'";
+        var query="select questions,answer from stack where questions LIKE '%"+word+"%' ORDER BY Q_ID DESC";
         return db.query(query,[word],callback);
     }
 
